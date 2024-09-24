@@ -1,0 +1,1 @@
+# The Language Server of sQeeZ

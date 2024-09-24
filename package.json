@@ -1,0 +1,14 @@
+{
+  "name": "language-server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "vscode-languageserver": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7",
+    "typescript": "^5.6.2"
+  }
+}
