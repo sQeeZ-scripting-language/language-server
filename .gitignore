@@ -1,4 +1,5 @@
+lexer/
+
 node_modules/
 dist/
 *.log
-*.node
