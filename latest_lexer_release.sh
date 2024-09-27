@@ -7,7 +7,13 @@ mkdir -p "$REPO_DIR"
 
 LATEST_RELEASE=$(curl -s "https://api.github.com/repos/$REPO/releases/latest")
 
-ZIP_URL=$(echo "$LATEST_RELEASE" | grep -o "https://.*sQeeZ-Lexer-macos-.*\.zip" | head -n 1)
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  ZIP_URL=$(echo "$LATEST_RELEASE" | grep -o "https://.*sQeeZ-Lexer-macos-.*\.zip" | head -n 1)
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  ZIP_URL=$(echo "$LATEST_RELEASE" | grep -o "https://.*sQeeZ-Lexer-linux-.*\.zip" | head -n 1)
+else
+  ZIP_URL=$(echo "$LATEST_RELEASE" | grep -o "https://.*sQeeZ-Lexer-windows-.*\.zip" | head -n 1)
+fi
 
 if [ -z "$ZIP_URL" ]; then
   echo "No matching asset found."
