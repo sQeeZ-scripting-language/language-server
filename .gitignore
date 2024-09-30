@@ -1,5 +1,6 @@
-lexer/
-
-node_modules/
-dist/
-*.log
+out
+node_modules
+client/server
+.vscode-test
+.clj-kondo
+.lsp
