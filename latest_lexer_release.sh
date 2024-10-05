@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REPO="sQeeZ-scripting-language/lexer"
-REPO_DIR="./lexer"
+REPO_DIR="./lexer-lib"
 
 mkdir -p "$REPO_DIR"
 
@@ -26,11 +26,12 @@ curl -L -o "$TEMP_DIR/sQeeZ-Lexer.zip" "$ZIP_URL"
 
 unzip "$TEMP_DIR/sQeeZ-Lexer.zip" -d "$REPO_DIR"
 
-mv "$REPO_DIR/"*/libsQeeZ-Lexer-Lib.a "$REPO_DIR/"
 mv "$REPO_DIR/"*/Release/sQeeZ-Lexer-Node.node "$REPO_DIR/"
 
-find "$REPO_DIR" -type d -empty -delete
-
+rm -rf "$REPO_DIR/"build-output-*
+rm -rf "$REPO_DIR/"lexer
 rm -rf "$TEMP_DIR"
+
+find "$REPO_DIR" -type d -empty -delete
 
 echo "Latest files have been downloaded and extracted to $REPO_DIR."

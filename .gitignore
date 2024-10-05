@@ -4,3 +4,4 @@ client/server
 .vscode-test
 .clj-kondo
 .lsp
+lexer-lib
