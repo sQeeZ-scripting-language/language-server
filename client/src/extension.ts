@@ -24,7 +24,7 @@ export function activate(context: ExtensionContext) {
 	};
 
 	const clientOptions: LanguageClientOptions = {
-		documentSelector: [{ scheme: 'file', language: 'plaintext', pattern: '**/*.sqz' }],
+		documentSelector: [{ scheme: 'file', language: 'sqeez', pattern: '**/*.sqz' }],
 		synchronize: {
 			fileEvents: workspace.createFileSystemWatcher('**/*.sqz')
 		}
@@ -38,6 +38,7 @@ export function activate(context: ExtensionContext) {
 	);
 
 	client.start();
+	console.log("Extension loaded")
 }
 
 export function deactivate(): Thenable<void> | undefined {

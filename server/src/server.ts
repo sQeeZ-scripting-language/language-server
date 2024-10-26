@@ -18,6 +18,7 @@ import {
 import {
 	TextDocument
 } from 'vscode-languageserver-textdocument';
+import { logCompletionItems, resolveLogCompletionItem } from './completion/log/log';
 
 const connection = createConnection(ProposedFeatures.all);
 
@@ -177,21 +178,17 @@ async function validateTextDocument(textDocument: TextDocument): Promise<Diagnos
 	return diagnostics;
 }
 
-connection.onDidChangeWatchedFiles(_change => {
-	connection.console.log('We received a file change event');
-});
-
 connection.onCompletion(
 	(_textDocumentPosition: TextDocumentPositionParams): CompletionItem[] => {
-		return [
-			{
-				label: 'sQeeZ',
-				kind: CompletionItemKind.Text,
-				data: 1
-			}
-		];
+	  return logCompletionItems;
 	}
-);
+  );
+  
+connection.onCompletionResolve(
+	(item: CompletionItem): CompletionItem => {
+	  return resolveLogCompletionItem(item);
+	}
+  );
 
 connection.onCompletionResolve(
 	(item: CompletionItem): CompletionItem => {

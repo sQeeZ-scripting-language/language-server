@@ -1,0 +1,29 @@
+{
+  "scopeName": "source.sqeez",
+  "name": "sQeez",
+  "patterns": [
+    { "include": "#functions" }
+  ],
+  "repository": {
+    "functions": {
+      "patterns": [
+        {
+          "name": "entity.name.function.sqeez",
+          "match": "\\blog\\(.*\\);"
+        },
+        {
+          "name": "entity.name.function.sqeez",
+          "match": "\\bwarn\\(.*\\);"
+        },
+        {
+          "name": "entity.name.function.sqeez",
+          "match": "\\berror\\(.*\\);"
+        },
+        {
+          "name": "entity.name.function.sqeez",
+          "match": "\\blogc\\(.*?,.*?\\);"
+        }
+      ]
+    }
+  }
+}
