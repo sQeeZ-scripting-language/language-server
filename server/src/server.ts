@@ -180,13 +180,13 @@ async function validateTextDocument(textDocument: TextDocument): Promise<Diagnos
 
 connection.onCompletion(
 	(_textDocumentPosition: TextDocumentPositionParams): CompletionItem[] => {
-	  return logCompletionItems;
+		return logCompletionItems;
 	}
   );
   
 connection.onCompletionResolve(
 	(item: CompletionItem): CompletionItem => {
-	  return resolveLogCompletionItem(item);
+		return resolveLogCompletionItem(item);
 	}
   );
 
