@@ -38,7 +38,7 @@ export function activate(context: ExtensionContext) {
 	);
 
 	client.start();
-	console.log("Extension loaded")
+	console.log("Extension loaded");
 }
 
 export function deactivate(): Thenable<void> | undefined {
